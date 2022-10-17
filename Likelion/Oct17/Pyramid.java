@@ -10,13 +10,13 @@ public class Pyramid {
     //피라미드는 * 위치에도 신경을 써야 함
      */
     public void welcomeToEgypt(int n) {
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < n; i++) {
             //j는 공백
-            for (int j = 4-i-1; j > 0; j--) {
+            for (int j = 4-1-i; j > 0; j--) {
                 System.out.printf(" ");
             }
-            for (int k = 0; k < 2*i+1; k++) {
-                System.out.printf("*");
+            for (int k = 0; k < i+1; k++) {
+                System.out.printf("* ");
             }
             System.out.println();
         }

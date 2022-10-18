@@ -1,4 +1,4 @@
-package codeup;
+package codeup.Codeup1000_1050;
 
 import java.util.Scanner;
 //너무 코드가 단순한 거 같은데?

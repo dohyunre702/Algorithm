@@ -1,4 +1,4 @@
-package codeup;
+package codeup.Codeup1000_1050;
 import java.util.Scanner;
 
 //split으로 나눈 뒤, parseInt로 정수 형변환해서 순서 바꾸어 출력

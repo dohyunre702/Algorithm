@@ -1,12 +1,12 @@
-package codeup;
+package codeup.Codeup1000_1050;
 
 import java.util.Scanner;
 
-public class Codeup1031 {
+public class Codeup1028 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int num = sc.nextInt();
+        long num = sc.nextLong();
 
-        System.out.printf("%o",num);
+        System.out.println(num);
     }
 }

@@ -8,7 +8,9 @@ public class Codeup1356 {
         try {
             for (int i = 0; i < a; i++) { //1~5줄 for문
                 if (i == 0 || i == a-1) { //각 라인 안에서 0번째, i번째
-                    System.out.println("*".repeat(a));
+                    for (int n = 0; n < a; n++) { // 안에서 for문을 돌린다
+                        System.out.print("*");
+                    }   System.out.println();
                 } else {
                     for (int k = 0; k == 0; k--) { //라인 안 0번째
                         System.out.print("*");

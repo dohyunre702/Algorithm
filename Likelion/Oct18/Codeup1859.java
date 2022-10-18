@@ -15,12 +15,12 @@ public class Codeup1859 {
     */
 
     public void printRS(int a) {
-        if (a > 0) {
+        if (a == 0) {
+            return;
+        } else {
             System.out.println("*".repeat(a));
             printRS(a - 1);
-        }
-        else {
-            System.out.println("종료");
+
         }
     }
 
@@ -32,11 +32,3 @@ public class Codeup1859 {
         recurStar.printRS(num1);
     }
 }
-
-/*
-out
-****
-***
-**
-*
- */

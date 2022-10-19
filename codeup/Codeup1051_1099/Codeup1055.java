@@ -2,13 +2,13 @@ package codeup.Codeup1051_1099;
 
 import java.util.Scanner;
 
-public class Codeup1054 {
+public class Codeup1055 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
         int b = sc.nextInt();
 
-        if (a == 1 && b == 1) {
+        if (a == 1 || b == 1) {
             System.out.println("1");
         } else {
             System.out.println("0");

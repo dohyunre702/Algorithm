@@ -7,15 +7,12 @@ public class Codeup1083 {
         Scanner sc = new Scanner(System.in);
         int input = sc.nextInt();
 
-        /*
-        for (int i = 1; i<=input; i++) {
-            if () {
-                System.out.print("X");
+        for (int i = 1; i <= input; i++) {
+            if (i % 3 == 0) {
+                System.out.printf("%s ", "X");
             } else {
-                System.out.print(i);
+                System.out.printf("%d ", i);
             }
         }
-    }
-    */
     }
 }

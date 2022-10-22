@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class SoobakSoobakSoo {
-
+//String Array to string 1. Arrays.toString()
     public String solution(int n) {
         String answer = "";
 

@@ -1,10 +1,9 @@
 package programmers;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class SoobakSoobakSoo {
-//String Array to string 1. Arrays.toString()
+//String Array to string 2. StirngBuilder.Append()
     public String solution(int n) {
         String answer = "";
 
@@ -18,8 +17,15 @@ public class SoobakSoobakSoo {
                 arr[i] = "박"; //홀수에 "박"을 넣어 저장.
             }
         }
-        //String 배열을 String으로 다시 합치기
-        answer = Arrays.toString(arr); //Arrays.toString. 또다른 문자열 배열 반환
+
+        //StringBuilder 객체 생성
+        StringBuilder sbArr = new StringBuilder();
+
+        for (int j = 0; j < arr.length; j++) {
+            sbArr.append(arr[j]); //문자열 객체에 요소 저장
+        }
+        answer = sbArr.toString();
+
         return answer;
         /* 반환타입이 void일 때 유효. 문제에는 String이라서 안됨
         //n이 들어올 때 index값을 따져서 그때까지의 값을 반환

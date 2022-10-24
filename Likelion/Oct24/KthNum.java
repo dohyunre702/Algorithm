@@ -12,7 +12,7 @@ class KthNum {
             int[] slicedArr = Arrays.copyOfRange(array, commands[i][0]-1, commands[i][1]);
             Arrays.sort(slicedArr); //잘라진 arr1을 오름차순 정렬 {2,3,5,6}
             k = commands[i][2];
-            answer[i] = slicedArr[k];
+            answer[i] = slicedArr[k-1]; //인덱싱 잘 하자
         }
         return answer;
     }

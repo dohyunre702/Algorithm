@@ -1,0 +1,54 @@
+package Likelion.relatedBasics;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class HashTable {
+    private int size = 10000;
+    private int[] table = new int[size];
+
+    public HashTable() { //기본 생성자
+    }
+
+    public HashTable(int size) {
+        this.size = size;
+        this.table = new int[size];
+    }
+
+    public int hash(String key) {
+        int asciiSum = 0;
+        for (int i = 0; i < key.length(); i++) {
+            asciiSum += key.charAt(i);
+        }
+        return asciiSum % size;
+        //나머지로 index를 만든 이유. size로 정한 배열의 어딘가로 가도록 하기 위함
+        //size 정하는 기준 : Hash충돌이 나지 않으면서 메모리를 너무 많이 쓰지 않는 크기
+    }
+
+    public void insert (String key, Integer value) {
+        int hashCode = hash(key);
+        this.table[hashCode] = value;
+        System.out.println(key + " " + hashCode + "방에 저장이 완료되었습니다.");
+    }
+
+    public int search (String key) {
+        return this.table[hash(key)];
+    }
+
+    public static void main(String[] args) {
+        String[] names = new String[]{"DongyeonKang",
+                "SubinKang", "KwanwunKo", "HyunseokKo", "KyoungdukKoo", "YeonjiGu", "SoyeonKown", "OhsukKwon", "GunwooKim", "KiheonKim", "NayeongKim", "DohyeonKim", "MinkyoungKim", "MinjiKim", "SanghoKim", "SolbaeKim", "YejinKim", "EungjunKim", "JaegeunKim", "JeonghyeonKim", "JunhoKim", "JisuKim", "kimjinah", "HaneulKim", "HeejungKim", "KimoonPark", "EunbinPark", "JeongHoonPark", "JeminPark", "TaegeunPark", "JiwonBae", "SeunggeunBaek", "JihwanByeon", "HeungseopByeon", "JeongHeeSeo", "TaegeonSeo", "SeeYunSeok", "SuyeonSeong", "SeyoelSon", "MinjiSong", "JinwooSong", "hyunboSim", "SominAhn", "JiyoungAhn", "ChangbumAn", "SoonminEom",
+                "HyeongsangOh", "SuinWoo", "JuwanWoo", "InkyuYoon", "GahyunLee", "DaonLee", "DohyunLee", "SanghunLee", "SujinLee", "AjinLee", "YeonJae", "HyeonjuLee", "HakjunYim", "SeoyunJang", "SeohyeonJang", "JinseonJang", "SujinJeon", "SeunghwanJeon", "DaehwanJung", "JaeHyunJeung", "HeejunJeong", "GukhyeonCho", "MunjuJo", "YejiJo", "ChanminJu", "MinjunChoi", "SujeongChoi", "SeunghoChoi", "AyeongChoi", "GeonjooHan", "JinhyuckHeo", "MinwooHwang", "SieunHwang",
+                "JunhaHwang"};
+
+        HashTable ht = new HashTable();
+        Set<Integer> nameSet = new HashSet<>();
+        for (int i = 0; i < names.length; i++) {
+            ht.insert(names[i], ht.hash(names[i]));
+        }
+        System.out.println(ht.search("DohyunLee"));
+        System.out.println(ht.search("Mommmmmm"));
+
+
+    }
+}

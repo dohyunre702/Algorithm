@@ -3,22 +3,15 @@ package programmers;
 //문자열 내 p와 y의 개수
 class PyinString1 {
     boolean solution(String s) {
-        char[] arr = new char[s.length()];
         boolean answer = true;
         int cntp = 0;
         int cnty = 0;
 
         for (int i = 0; i < s.length(); i++) {
-            arr[i] = s.charAt(i);
-        }
-
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] == 'p' || arr[i] == 'P')
+            if (s.charAt(i) == 'p' || s.charAt(i) == 'P')
                 cntp += 1;
-        }
 
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] == 'y' || arr[i] == 'Y')
+            if (s.charAt(i) == 'y' || s.charAt(i) == 'Y')
                 cnty += 1;
         }
 

@@ -7,12 +7,17 @@ package Likelion;
 //새로운 배열에 count의 최대값 넣기
 //리스트?
 
+import java.util.ArrayList;
+
 public class Oct31 {
     public int[] solution(int[] arr) {
-        int[] result = new int[]{};
+        int[] result = new int[3];
         int[] array1 = {1,2,3,4,5};
         int[] array2 = {2,1,2,3,2,4,2,5};
         int[] array3 = {3,3,1,1,2,2,4,4,5,5};
+
+        ArrayList<Integer> list = new ArrayList<>();
+
 
         int firstStudentAnswerCnt = 0;
         System.out.println(firstStudentAnswerCnt);

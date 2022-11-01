@@ -2,12 +2,12 @@ package Likelion;
 
 //13,17,19,23이 소수인지 판별하는 알고리즘 만들기
 
-//2. 13 / 2 미만까지 나누어보기
+//3. 13의 제곱근까지 나누어보기
 
 class PrimeNum01 {
     public boolean result(int arr[]) {
         boolean answer = false;
-        for (int i = 2; i <= (int)(arr.length/2) ; i++) {
+        for (int i = 2; i <= (int) Math.sqrt(arr.length) ; i++) {
             if (arr[i] % i != 0) {
                 answer = true;
             }

@@ -2,7 +2,7 @@ package Likelion;
 
 //13,17,19,23이 소수인지 판별하는 알고리즘 만들기
 
-//3번 template callback 적용 연습
+///3번 template callback 적용 연습
 
 class PrimeNum01{
     boolean operation(int a, int b) {

@@ -3,18 +3,20 @@ package Likelion;
 //13,17,19,23이 소수인지 판별하는 알고리즘 만들기
 
 //3번 template callback 적용 연습
-class PrimeNum01 implements PrimeNumGenerator{
-    @Override
-    public boolean result01(int arr[]) {
-        boolean answer = false;
-        for (int i = 2; i <= arr.length ; i++) {
+
+class PrimeNum01{
+    boolean operation(int a, int b) {
+        return a <= b;
+    }
+    //callback 1단계 적용
+    public boolean result01(int arr[]) {//callback
+        for (int i = 2; operation(i, arr.length) ; i++) {
             if (arr[i] % i != 0) {
-                answer = true;
+               return true;
             }
-        }   return answer;
+        }   return false;
     }
 
-    @Override
     public boolean result02(int arr[]) {
         boolean answer = false;
         for (int i = 2; i <= (int)arr.length/2 ; i++) {
@@ -24,7 +26,6 @@ class PrimeNum01 implements PrimeNumGenerator{
         }   return answer;
     }
 
-    @Override
     public boolean result03(int arr[]) {
         boolean answer = false;
         for (int i = 2; i * i <= arr.length ; i++) {

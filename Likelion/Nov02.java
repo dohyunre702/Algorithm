@@ -14,26 +14,14 @@ public class Nov02 {
             numlist.add(i);
         }
 
-        for (int j = 0; j < n-1; j++) {
+        for (int j = 0; j < numlist.size(); j++) {
             if (numlist.get(j) % 2 == 0) {
                 numlist.remove(j);
             }
         }
 
-    System.out.println(Arrays.toString(numlist.toArray()));
+        System.out.println(Arrays.toString(numlist.toArray()));
+        System.out.println(numlist.size());
 
-    /*
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int x = sc.nextInt();
-
-        Nov02 cal = new Nov02();
-        cal.solution(x);
-
-        for (int i = 0; i < x; i++) {
-
-        }
     }
-
-     */
 }

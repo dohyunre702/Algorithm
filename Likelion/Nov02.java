@@ -3,13 +3,13 @@ package Likelion;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
-//소수찾기 - 에라토스테네스의 체
+//소수찾기 - 에라토스테네스의 체 수정완
 public class Nov02 {
-    public static void main(String[] args) {
+    public void solution(int n) {
         List<Integer> numlist = new ArrayList<>();
 
-        int n = 10;
         for (int i = 2; i <= n; i++) {
             numlist.add(i);
         }
@@ -19,9 +19,16 @@ public class Nov02 {
                 numlist.remove(j);
             }
         }
-
-        System.out.println(Arrays.toString(numlist.toArray()));
+        //출력
+        System.out.println(numlist);
         System.out.println(numlist.size());
 
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int x = sc.nextInt();
+
+        Nov02 result = new Nov02();
+        result.solution(x);
     }
 }

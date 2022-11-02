@@ -1,26 +1,28 @@
 package Likelion;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-import java.util.Scanner;
 
 //소수찾기 - 에라토스테네스의 체
 public class Nov02 {
-    public List<Integer> solution(int n) {
+    public static void main(String[] args) {
         List<Integer> numlist = new ArrayList<>();
 
+        int n = 10;
         for (int i = 2; i <= n; i++) {
             numlist.add(i);
         }
 
         for (int j = 0; j < n-1; j++) {
-            if (numlist.get(j) % 2 == 0) {k
+            if (numlist.get(j) % 2 == 0) {
                 numlist.remove(j);
             }
         }
-        return numlist;
-    }
 
+    System.out.println(Arrays.toString(numlist.toArray()));
+
+    /*
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int x = sc.nextInt();
@@ -32,4 +34,6 @@ public class Nov02 {
 
         }
     }
+
+     */
 }

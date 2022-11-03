@@ -1,4 +1,4 @@
-package Likelion;
+package Likelion.Nov;
 
 //에라토스테네스의 체 - array (효율성 향상 시도)
 //list에서 add, remove연산을 할 필요가 없어 시간 복잡도가 감소

@@ -1,4 +1,4 @@
-package Likelion;
+package Likelion.Nov;
 
 interface StatementStrategy {
     boolean compare(int a, int b);

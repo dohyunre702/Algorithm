@@ -1,4 +1,4 @@
-package Likelion;
+package Likelion.Oct;
 //모의고사
 
 //정답과 비교하려면 먼저 배열 길이를 맞춰주어야 한다

@@ -1,4 +1,4 @@
-package Likelion.Oct17;
+package Likelion.Oct.Oct17;
 
 public class Pyramid {
     /*

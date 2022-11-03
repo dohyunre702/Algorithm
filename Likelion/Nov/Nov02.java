@@ -1,11 +1,10 @@
-package Likelion;
+package Likelion.Nov;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-//소수찾기 - 에라토스테네스의 체 수정완
+//소수찾기 - 에라토스테네스의 체 1. list
 public class Nov02 {
     public void solution(int n) {
         List<Integer> numlist = new ArrayList<>();

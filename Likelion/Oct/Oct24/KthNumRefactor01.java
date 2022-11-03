@@ -1,4 +1,4 @@
-package Likelion.Oct24;
+package Likelion.Oct.Oct24;
 
 import java.util.*;
 //K번쨰 수 리팩토링. For each문 사용

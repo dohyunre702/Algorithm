@@ -1,4 +1,4 @@
-package Likelion;
+package Likelion.Nov;
 
 //13,17,19,23이 소수인지 판별하는 알고리즘 만들기
 
@@ -36,6 +36,7 @@ class PrimeNum01{
     }
 }
 
+/*
 public class Nov01 {
     public static void main(String[] args) {
         PrimeNum01 primenum = new PrimeNum01();
@@ -43,4 +44,4 @@ public class Nov01 {
         System.out.println(primenum.result(primeArr));
     }
 }
-
+*/

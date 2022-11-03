@@ -1,4 +1,4 @@
-package Likelion.Oct17;
+package Likelion.Oct.Oct17;
 
 /*
  *           i = 0 별이 1개
@@ -7,8 +7,6 @@ package Likelion.Oct17;
  * * * *     i = 0 별이 4개
  */
 
-
-import java.util.Scanner;
 
 public class Star1 {
     public void nightSky(int n) {

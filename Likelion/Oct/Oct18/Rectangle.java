@@ -1,4 +1,4 @@
-package Likelion.Oct18;
+package Likelion.Oct.Oct18;
 
 import java.util.Scanner;
 

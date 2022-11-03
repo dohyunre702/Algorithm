@@ -1,5 +1,7 @@
 package Likelion;
 
+//에라토스테네스의 체 배열 1단계
+//n = 100, 0인덱스 : 1씩 증가, 1인덱스 : 2배수씩 증가
 public class Nov03map {
     public static void main(String[] args) {
         int[] arr = new int[2];

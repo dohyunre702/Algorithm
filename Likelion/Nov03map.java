@@ -5,10 +5,15 @@ import java.util.Map;
 
 public class Nov03map {
     public static void main(String[] args) {
-        Map<Integer, Integer> multipleof = new HashMap<>();
+        //
 
+        for (int i = 0; i < 100; i++) {
+
+        }
         //n = 2에서 시작
-        //key에 n+1
-        //value에 n*2
+        //[0]에 n+1
+        //[1]에 n*2
+
+
     }
 }

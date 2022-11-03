@@ -1,19 +1,16 @@
 package Likelion;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class Nov03map {
     public static void main(String[] args) {
-        //
+        int[] arr = new int[2];
+        int i = 2;
 
-        for (int i = 0; i < 100; i++) {
-
+        while(i<=100) {
+            arr[0] = i;
+            arr[1] = i*2;
+            System.out.printf("[%d, %d]", arr[0], arr[1]);
+            System.out.println();
+            i++;
         }
-        //n = 2에서 시작
-        //[0]에 n+1
-        //[1]에 n*2
-
-
     }
 }

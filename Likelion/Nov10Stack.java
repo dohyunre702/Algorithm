@@ -1,5 +1,4 @@
 package Likelion;
-
 import java.util.Stack;
 
 //같은 숫자는 싫어 stack 사용
@@ -15,7 +14,9 @@ public class Nov10Stack {
         }
 
         int[] answer = new int[st.size()];
-        for (int i = 0; i < answer.length; i++) {
+
+        //거꾸로 꺼내기
+        for (int i = st.size() -1; i >= 0; i++) {
             answer[i] = st.pop();
         }
         return answer;

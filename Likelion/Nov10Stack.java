@@ -16,7 +16,7 @@ public class Nov10Stack {
         int[] answer = new int[st.size()];
 
         //거꾸로 꺼내기
-        for (int i = st.size() -1; i >= 0; i++) {
+        for (int i = st.size() -1; i >= 0; i--) {
             answer[i] = st.pop();
         }
         return answer;

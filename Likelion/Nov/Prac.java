@@ -15,14 +15,26 @@ public class Prac {
         //11100
 
         //2. 나누기
-        String answer = "";
+        //10진수 int를 2진수 string으로
+        String tmp = "";
         int b = 28;
         while(b>0) {
-            answer += b % 2;
-            b = b/2;
+            tmp += b % 2;
+            b /= 2;
             //String + int = String
         }
-        System.out.println(answer);
 
+        //char로 바꾸어 String 뒤집기
+        char[]input = tmp.toCharArray();
+        char[]output = new char[tmp.length()];
+
+        for (int i = 0; i < input.length; i++) {
+            output[i] = input[input.length-i-1];
         }
+        String answer = new String(output);
+
+        System.out.println(answer);
+        }
+
+
     }

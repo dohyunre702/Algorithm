@@ -11,12 +11,16 @@ public class Nov14 {
         int n = 50;
         int[] arr = new int[n-1];
 
-        for(int i = 0; i < arr.length; i++) {
-            arr[i] = i + 2; //2~50까지
+        //2를 제외한 2의 배수를 0으로 만들기
+        for (int i = 0; i* i <= n; i++) {
+            System.out.println("i:" + i);
+            if (arr[i] != 0) {
+                for (int j = i * 2 + 2; j < arr.length; j += arr[i]) {
+                    System.out.println(j);
+                    arr[j] = 0;
+                }
+            }
         }
 
-        for (int j = 0; j < arr.length; j++) {
-            arr[j] = 0;
-        }
     }
 }

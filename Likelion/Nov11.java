@@ -1,5 +1,6 @@
 package Likelion;
 
+
 //[1차]비밀지도
 
 /*접근방법 (1)
@@ -7,29 +8,30 @@ package Likelion;
 2. arr1의 인덱스값과 arr2의 인덱스값을 더한다
 3. 더한 값이 0이면 "", 1이면 "#"을 반환한다
 
-접근방법 (2)
-1. 두 이진수를 더한다.
-2. 2의 n승-1보다 크면 앞의 자릿수를 자른다
-3. 1일 때 "#", 0일 떄 "" 반환
  */
 
-//1번 방식
+/*
 public class Nov11 {
     public String[] solution(int n, int[] arr1, int[] arr2) {
-        String[] answer = new String[n];
-        String[] arrtwo = new String[n];
+        String[] str = new String[n];
+        for (int i = 0; i < n; i++) {
+            while (arr1[i] > 0) {
+                str[i] += arr1[i] % 2;
+                arr1[i] /= 2;
+            }
+        }
 
-        for(int i = 0; i < n; i++) {
-            arr1[i] = Integer.parseInt(Integer.toBinaryString(arr1[i]));
-            arr2[i] = Integer.parseInt(Integer.toBinaryString(arr2[i]));
+        //char로 바꾸어 String 뒤집기
+            char[]input = str.toCharArray();
+            char[]output = new char[str.length()];
 
+            for (int j = 0; j < input.length; j++) {
+                output[j] = input[input.length-i-1];
+            }
+
+            }
         }
 
 
-        return answer;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(Integer.toBinaryString(39));
-    }
-}
+ */
+//1번 방식

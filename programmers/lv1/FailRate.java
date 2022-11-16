@@ -1,5 +1,8 @@
 package programmers.lv1;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /* 실패율 lv.1 접근 방식 (2)
 1. stages 배열에서 0~n까지의 숫자가 각각 몇 개인지 카운트한 새로운 int형 배열 arr 만들기 ok
 2. 실패율 = arr[i]/N-arr[i] (이 떄 N은 앞의 arr[i]를 뺀 값을 누적함) = answer[i]
@@ -33,7 +36,12 @@ public class FailRate {
             // arrFloat = [0.125000, 0.428571, 0.500000, 0.500000, 0.000000]
         }
 
-        //3. 내림차순 정렬하는 index값 > 순위를 표현하는 int형 배열 1개 answer
+        //3. Map으로 idx값 부여하기
+        Map<Float, Integer> arrMap = new HashMap<>();
+        for(int i=0; i<arrFloat.length; i++) {
+            arrMap.put(arrFloat[i], i);
+        }
+
 
         /*
         //출력용

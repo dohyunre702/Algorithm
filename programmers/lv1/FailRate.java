@@ -9,10 +9,10 @@ package programmers.lv1;
 public class FailRate {
     public void solution(int N, int[] stages) {
         //int[] stages = {2,1,2,6,2,4,3,3};
-        int[] answer = new int[N];
+        int[] answer = new int[N]; //분수 담아야 하므로 float 변환
         int[] arr = new int[N];
 
-        //stages 배열에서 i에 해당하는 숫자가 몇 개인지 카운트한 배열 arr 생성
+        //1. stages 배열에서 i에 해당하는 숫자가 몇 개인지 카운트한 배열 arr 생성
         for(int i=0; i<arr.length-1; i++) {
             int tmp = 0;
             for(int j=0; j<stages.length; j++) {
@@ -23,17 +23,24 @@ public class FailRate {
             arr[i] = tmp; //[1,3,2,1,0].ok.
         }
 
-        //실패율 = arr[i]/N-arr[i] (이 떄 N은 앞의 arr[i]를 뺀 값을 누적함) = answer[i]
-        //아 분수 표현 어떻게 하지
+        //2. 실패율 = arr[i]/k-arr[i] (이 떄 N은 앞의 arr[i]를 뺀 값을 누적함) = answer[i]
+        //배열에 실수 담기 위해 float형 배열 arrFloat 하나 더 만들기
+        float[] arrFloat = new float[N];
+        int k = stages.length;
         for(int i = 0; i< arr.length; i++) {
-            answer[i] = arr[i] / N;
-            N = N - arr[i];
+            arrFloat[i] = (float) arr[i] / k;
+            k = k - arr[i];
+            // arrFloat = [0.125000, 0.428571, 0.500000, 0.500000, 0.000000]
         }
 
+        //3. 내림차순 정렬하는 index값 > 순위를 표현하는 int형 배열 1개 answer
+
+        /*
         //출력용
         for(int i = 0; i < answer.length; i++) {
-            System.out.printf("%d, ", answer[i]);
+            System.out.printf("%f, ", answer[i]);
         }
+         */
     }
 
     //test코드
@@ -42,6 +49,8 @@ public class FailRate {
         int a = 5;
 
         FailRate result = new FailRate();
-        result.solution(a,example);
+        result.solution(a,example); //result = [3,4,2,1,5] 여야 함
+        System.out.println();
+        System.out.println((float)1/8);
     }
 }

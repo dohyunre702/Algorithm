@@ -1,7 +1,6 @@
 package programmers.lv1;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /* 실패율 lv.1 접근 방식 (2)
 1. stages 배열에서 0~n까지의 숫자가 각각 몇 개인지 카운트한 새로운 int형 배열 arr 만들기 ok
@@ -36,19 +35,31 @@ public class FailRate {
             // arrFloat = [0.125000, 0.428571, 0.500000, 0.500000, 0.000000]
         }
 
-        //3. Map으로 idx값 부여하기
-        Map<Float, Integer> arrMap = new HashMap<>();
+        //3-1. Map으로 idx값 부여하기 (key 중복정렬 안됨.. : idx, value:실패율)
+        Map<Integer, Float> arrMap = new HashMap<>();
         for(int i=0; i<arrFloat.length; i++) {
-            arrMap.put(arrFloat[i], i);
+            arrMap.put(i+1, arrFloat[i]);
         }
 
-
-        /*
-        //출력용
-        for(int i = 0; i < answer.length; i++) {
-            System.out.printf("%f, ", answer[i]);
+        // key : value 출력 - for loop (keySet())
+        Set<Integer> keySet = arrMap.keySet();
+        for (Integer key : keySet) {
+            System.out.println(key + " : " + arrMap.get(key));
+            /* 출력
+            1 : 0.125
+            2 : 0.42857143
+            3 : 0.5
+            4 : 0.5
+            5 : 0.0
+             */
         }
-         */
+
+        //3-2. value 값 기준으로 내림차순 정렬
+
+
+        //3-3. 내림차순 정렬 후 key값 추출
+
+
     }
 
     //test코드
@@ -59,6 +70,6 @@ public class FailRate {
         FailRate result = new FailRate();
         result.solution(a,example); //result = [3,4,2,1,5] 여야 함
         System.out.println();
-        System.out.println((float)1/8);
+
     }
 }

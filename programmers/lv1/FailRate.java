@@ -1,4 +1,4 @@
-package programmers;
+package programmers.lv1;
 
 /*실패율 lv.1
 접근 방식
@@ -9,6 +9,7 @@ package programmers;
 5. 만약 요소의 수가 같으면 i 기준으로 오름차순 정렬한다.
 6. 완성되면 tmp 리스트를 int 배열로 변환한다 (answer 배열)
  */
+
 public class FailRate {
     public int[] solution(int N, int[] stages) {
         int[] answer = new int[N+1];

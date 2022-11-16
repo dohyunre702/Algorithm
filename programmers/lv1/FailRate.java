@@ -62,7 +62,11 @@ public class FailRate {
             System.out.println(String.format("Key : %s, Value : %s", key, arrMap.get(key)));
         }
 
-        //3-3. 내림차순 정렬 후 key값 추출
+        //3-3. key값 answer 배열에 넣기
+        Set<Integer> keySetUse = arrMap.keySet();
+        for (Integer key : keySetUse) {
+            System.out.printf("%d, ", arrMap.get(key));
+        }
 
     }
     //test코드

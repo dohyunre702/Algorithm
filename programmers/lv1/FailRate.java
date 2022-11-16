@@ -15,10 +15,10 @@ public class FailRate {
         int[] arr = new int[N];
 
         //1. stages 배열에서 i에 해당하는 숫자가 몇 개인지 카운트한 배열 arr 생성
-        for(int i=0; i<arr.length-1; i++) {
+        for (int i = 0; i < arr.length - 1; i++) {
             int tmp = 0;
-            for(int j=0; j<stages.length; j++) {
-                if (stages[j] == i+1) {
+            for (int j = 0; j < stages.length; j++) {
+                if (stages[j] == i + 1) {
                     tmp++;
                 }
             }
@@ -29,7 +29,7 @@ public class FailRate {
         //배열에 실수 담기 위해 float형 배열 arrFloat 하나 더 만들기
         float[] arrFloat = new float[N];
         int k = stages.length;
-        for(int i = 0; i< arr.length; i++) {
+        for (int i = 0; i < arr.length; i++) {
             arrFloat[i] = (float) arr[i] / k;
             k = k - arr[i];
             // arrFloat = [0.125000, 0.428571, 0.500000, 0.500000, 0.000000]
@@ -37,8 +37,8 @@ public class FailRate {
 
         //3-1. Map으로 idx값 부여하기 (key 중복정렬 안됨.. : idx, value:실패율)
         Map<Integer, Float> arrMap = new HashMap<>();
-        for(int i=0; i<arrFloat.length; i++) {
-            arrMap.put(i+1, arrFloat[i]);
+        for (int i = 0; i < arrFloat.length; i++) {
+            arrMap.put(i + 1, arrFloat[i]);
         }
 
         // key : value 출력 - for loop (keySet())
@@ -54,14 +54,17 @@ public class FailRate {
              */
         }
 
-        //3-2. value 값 기준으로 내림차순 정렬
-
+        //3-2. value 값 기준으로 내림차순 정렬. Collection.sort() 사용
+        List<Integer> list = new ArrayList<>(arrMap.keySet());
+        Collections.sort(list, (o1, o2) -> Double.compare(arrMap.get(o2), arrMap.get(o1)));
+        //내림차순 정렬 후 출력
+        for (Integer key : list) {
+            System.out.println(String.format("Key : %s, Value : %s", key, arrMap.get(key)));
+        }
 
         //3-3. 내림차순 정렬 후 key값 추출
 
-
     }
-
     //test코드
     public static void main(String[] args) {
         int[] example = {2,1,2,6,2,4,3,3};

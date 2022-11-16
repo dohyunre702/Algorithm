@@ -10,7 +10,7 @@ public class Collatz {
         if (num == 1) answer = 0;
         else {
             int n = num;
-            while (n != 1) {
+            while (n == 1) {
                 if (n % 2 == 0) {
                     n = n / 2;
                     cnt++;

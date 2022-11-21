@@ -11,11 +11,8 @@ public class FindingMrKim {
                 break;
             }
         }
+        return "김서방은 " + a + "에 있다";
 
-        String[] temp = {"김서방은 ", "x", "에 있다"};
-        temp[1] = String.valueOf(a);
-        String answer = String.join("", temp);
-        return answer;
     }
 
     public static void main(String[] args) {

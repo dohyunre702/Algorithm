@@ -6,7 +6,7 @@ public class FindingMrKim {
     public String solution(String[] seoul) {
         int a = 0;
         for(int i =0; i< seoul.length; i++) {
-            if(seoul[i] == "Kim") {
+            if(seoul[i].equals("Kim")) {
                 a = i;
                 break;
             }

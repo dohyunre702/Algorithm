@@ -1,7 +1,5 @@
 package Likelion;
 
-import codeup.Codeup1101_.Codeup1855;
-
 import java.util.Scanner;
 
 //재귀 없는 피보나치 수열

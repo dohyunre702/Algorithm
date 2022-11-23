@@ -1,7 +1,7 @@
 package codeup.Codeup1101_;
 
 import java.util.Scanner;
-
+//팩토리얼
 public class Codeup1912 {
     public static int factorial(int n) {
         int a = n;

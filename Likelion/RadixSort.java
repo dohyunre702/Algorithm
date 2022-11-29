@@ -1,32 +1,30 @@
 package Likelion;
 
-import java.util.ArrayDeque;
-import java.util.Arrays;
-import java.util.Queue;
+import java.util.*;
 
 //Nov29: 기수정렬 - 1의 자리로 정렬한 후 10의 자리로 정렬하는 방법
+//각 숫자의 자릿수를 구해서 중복을 제거한 후 오름차순으로 정렬해서 리턴
 public class RadixSort {
-    public static void main(String[] args) {
-        int[] arr = new int[]{2, 8, 18, 13, 1, 7, 16, 7, 0, 14};
-
-        //Queue 10개 생성
-        Queue<Integer>[] queueArr = new Queue[10];
-        for (int i = 0; i < queueArr.length; i++) {
-            queueArr[i] = new ArrayDeque<>();
+    public static int[] getDigits(int[] arr) {
+        Set<Integer> set = new HashSet<>();
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == 0) set.add(1);
+            else set.add((int)(Math.log10(arr[i])+1));
         }
 
-        // 일의 자리가 맞는 곳에 삽입
-        for (int i : arr) {
-            queueArr[i % 10].add(i); // i % 10해서 일의 자리를 구함
-        }
-
-        // 꺼내서 arr에 다시 넣는다
+        //중복 제거된 자릿수를 arr에 담기
+        int[] answer = new int[set.size()];
         int idx = 0;
-        for (int i = 0; i < queueArr.length; i++) {
-            while (!queueArr[i].isEmpty()) {
-                arr[idx++] = queueArr[i].poll();
-            }
+        for (Integer num : set) {
+            answer[idx++] = num;
         }
-        System.out.println(Arrays.toString(arr));
+        Arrays.sort(answer); //정렬
+        return answer;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = new int[]{7,4,5,9,1,0,20};
+        int[] digits = getDigits(arr);
+        System.out.println(Arrays.toString(digits));
     }
 }

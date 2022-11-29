@@ -1,28 +1,32 @@
 package Likelion;
 
+import java.util.ArrayDeque;
 import java.util.Arrays;
+import java.util.Queue;
 
-//Nov29
+//Nov29: 기수정렬 - 1의 자리로 정렬한 후 10의 자리로 정렬하는 방법
 public class RadixSort {
     public static void main(String[] args) {
-        int[] arr = new int[]{7,4,5,9,1,0};
-        int[] redixArr = new int[10];
-        Arrays.fill(redixArr, -1);
+        int[] arr = new int[]{2, 8, 18, 13, 1, 7, 16, 7, 0, 14};
 
-        //배열에서 꺼내 넣기
-        for (int i: arr) {
-            redixArr[i] = i;
+        //Queue 10개 생성
+        Queue<Integer>[] queueArr = new Queue[10];
+        for (int i = 0; i < queueArr.length; i++) {
+            queueArr[i] = new ArrayDeque<>();
         }
-        //[0, 1, -1, -1, 4, 5, -1, 7, -1, 9]
 
-        //1개씩 꺼내 arr에 넣기
-        int cnt = 0;
-        for (int i = 0; i < redixArr.length; i++) {
-            if(redixArr[i] != -1) {
-                arr[cnt++] = redixArr[i];
+        // 일의 자리가 맞는 곳에 삽입
+        for (int i : arr) {
+            queueArr[i % 10].add(i); // i % 10해서 일의 자리를 구함
+        }
+
+        // 꺼내서 arr에 다시 넣는다
+        int idx = 0;
+        for (int i = 0; i < queueArr.length; i++) {
+            while (!queueArr[i].isEmpty()) {
+                arr[idx++] = queueArr[i].poll();
             }
         }
         System.out.println(Arrays.toString(arr));
-        //[0, 1, 4, 5, 7, 9]
     }
 }

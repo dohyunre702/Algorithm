@@ -5,17 +5,14 @@ public class PYpyinString {
     boolean solution(String s) {
         s = s.toLowerCase();
 
-        int cntp = 0;
-        int cnty = 0;
+        int cnt = 0;
 
         for (int i = 0; i < s.length(); i++) {
-            if (s.charAt(i) == 'p') cntp += 1;
+            if (s.charAt(i) == 'p') cnt++;
+            else if (s.charAt(i) == 'y') cnt--;
         }
 
-        for (int i = 0; i < s.length(); i++) {
-            if (s.charAt(i) == 'y') cnty += 1;
-        }
-
-        return cntp == cnty;
+        if (cnt == 0) return true;
+        else return false;
     }
 }

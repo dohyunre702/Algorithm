@@ -5,7 +5,7 @@ package programmers.lv1;
 2. for문으로 1부터 num까지 약수의 개수를 더하기
 **와우 성능 차이가 엄청 나긴 하는구나 1번 문제만 해도 약 40배이다(127ms -> 3.42ms)
 */
-import java.util.Scanner;
+
 public class WeaponOfKnight {
     public int solution(int number, int limit, int power) {
     int answer = 0;

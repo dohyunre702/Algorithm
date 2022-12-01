@@ -7,15 +7,16 @@ package programmers.lv1;
 */
 import java.util.Scanner;
 public class WeaponOfKnight {
-    public static int solution(int number, int limit, int power) {
+    public int solution(int number, int limit, int power) {
     int answer = 0;
     for (int i = 1; i <= number; i++) {
-        answer += numberofPrimes(i, limit, power);
+        if (count(i) > limit) answer += power;
+        else answer += count(i);
         }
     return answer;
     }
 
-    public static int numberofPrimes(int number, int limit, int power) {
+    public int count(int number) {
         int cnt = 0;
         //약수의 개수. 제곱근으로 구한 뒤 제곱수+1, 나머지 +2(순서쌍)
         for (int i = 1; i * i <= number; i++) {
@@ -24,17 +25,6 @@ public class WeaponOfKnight {
                 else cnt += 2;
             }
         }
-        if (cnt > limit) return power;
         return cnt;
-    }
-    //test
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int num = sc.nextInt();
-        int lim = sc.nextInt();
-        int pow = sc.nextInt();
-
-        WeaponOfKnight result = new WeaponOfKnight();
-        System.out.println(solution(num, lim, pow));
     }
 }

@@ -3,7 +3,7 @@ package programmers.lv2.stackQue;
 import java.util.Scanner;
 import java.util.Stack;
 
-//올바른 괄호. 반례와의 싸움...
+//올바른 괄호. for 내 조건 풀이
 class CorrectBrackets {
     static boolean solution(String s) {
         boolean answer = true;
@@ -13,15 +13,16 @@ class CorrectBrackets {
         //2. 마지막 괄호가 )이어야 함
 
         Stack<Character> stk = new Stack<>();
-        stk.push(s.charAt(0));
-
-        if (s.charAt(0) == ')') return answer = false;
-
-        for(int i = 1; i < s.length()-2; i++) {
-            if (s.charAt(i) != s.charAt(i-1)) stk.push(s.charAt(i));
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == '(') //현재 ( 가 들어갈 자리면 스택에 넣기
+                stk.push(s.charAt(i));
+            else {
+                if (stk.isEmpty()) return false; //현재 )가 들어갈 자리인데 스택 비어있을 때
+                else stk.pop(); //현재 )가 들어갈 자리인데 스택에 ( 가 있는 경우 pop
+            }
         }
-        if (stk.peek() != '(') return answer = true;
-        else return answer = false;
+        answer = (stk.isEmpty()) ? true : false;
+        return answer;
     }
 
     //test

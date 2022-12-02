@@ -1,4 +1,4 @@
-package Likelion;
+package Likelion.Nov;
 
 //하샤드 수
 // 몫 = tmp

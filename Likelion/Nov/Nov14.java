@@ -1,4 +1,4 @@
-package Likelion;
+package Likelion.Nov;
 
 /*
 1. 2~50이 들어있는 배열을 만들고

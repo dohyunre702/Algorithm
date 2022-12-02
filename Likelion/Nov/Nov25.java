@@ -1,4 +1,4 @@
-package Likelion;
+package Likelion.Nov;
 
 //GCD without recursion
 public class Nov25 {

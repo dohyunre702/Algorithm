@@ -1,4 +1,4 @@
-package Likelion;
+package Likelion.Nov;
 
 //재귀 구현
 public class Nov22 {

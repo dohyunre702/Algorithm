@@ -1,4 +1,4 @@
-package Likelion;
+package Likelion.Nov;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +24,7 @@ public class Nov15 {
 
 
         //기준값 기준으로 왼쪽 오른쪽 나누어 담는 로직 구현
-        return sort(left) + pivot + sort(right);
+        //return sort(left) + pivot + sort(right);
 
     }
 

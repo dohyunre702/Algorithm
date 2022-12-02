@@ -1,4 +1,4 @@
-package Likelion;
+package Likelion.Nov;
 import java.util.Stack;
 
 //같은 숫자는 싫어 stack 사용

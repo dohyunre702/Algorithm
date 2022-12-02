@@ -1,8 +1,6 @@
-package Likelion;
+package Likelion.Nov;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 //에라토스테네스의 체 배열 - checks를 참고해 true인 nums[i]만 출력
 public class Nov03 {

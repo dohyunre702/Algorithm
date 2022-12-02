@@ -1,4 +1,4 @@
-package Likelion;
+package Likelion.Nov;
 
 import java.util.Scanner;
 

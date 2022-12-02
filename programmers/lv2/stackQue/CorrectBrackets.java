@@ -3,31 +3,25 @@ package programmers.lv2.stackQue;
 import java.util.Scanner;
 import java.util.Stack;
 
-//올바른 괄호
+//올바른 괄호. 반례와의 싸움...
 class CorrectBrackets {
     static boolean solution(String s) {
         boolean answer = true;
-        //1. 처음에 (로 시작해야 한다
-        //2. 마지막에 )로 끝마쳐야 한다
-        //3. (와 )의 수가 같아야 한다
+        //반례: ()))((() ㅏㅏ 이래서 스택을 써야되는구나
+        //0. 가장 처음에는 ( 가 추가되어야 함
+        //1. 2~n-1번째 괄호는 이전 괄호와 다를 때만 추가.
+        //2. 마지막 괄호가 )이어야 함
 
-        int a = 0; int b = 0;
+        Stack<Character> stk = new Stack<>();
+        stk.push(s.charAt(0));
 
-        char[] charArr = s.toCharArray();
+        if (s.charAt(0) == ')') return answer = false;
 
-        //() 3번 조건 체크하기 위한 반복문
-        for (int i = 0; i < charArr.length; i++) {
-            if (charArr[i] == '(') a++;
-            else b++;
+        for(int i = 1; i < s.length()-2; i++) {
+            if (s.charAt(i) != s.charAt(i-1)) stk.push(s.charAt(i));
         }
-
-        //조건 체크
-        if (a == b) {
-            if (charArr[0] == '(' && charArr[charArr.length - 1] == ')')
-                answer = true;
-            else answer = false;
-        } else answer = false;
-        return answer;
+        if (stk.peek() != '(') return answer = true;
+        else return answer = false;
     }
 
     //test

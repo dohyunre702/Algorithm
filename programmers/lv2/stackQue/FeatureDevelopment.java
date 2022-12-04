@@ -9,7 +9,7 @@ public class FeatureDevelopment {
     public static void solution(int[] progresses, int[] speeds) {
         List<Integer> ans = new ArrayList<>();
         Stack<Integer> stk = new Stack<>();
-        int cnt = 0; //
+        int cnt = 0;
 
         //몇 일 걸리는지
         for (int i = 0; i < progresses.length; i++) {

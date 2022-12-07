@@ -9,17 +9,20 @@ import java.util.PriorityQueue;
 
 public class Hotter {
     public int solution(int[] scoville, int K) {
-        int answer = 0;
+
         PriorityQueue<Integer> pq = new PriorityQueue<>();
 
         for (int i = 0; i < scoville.length; i++) {
-            pq.offer(scoville[i]);
+            pq.add(scoville[i]);
         }
-
-        //while
+        //섞기
+        int answer = 0;
         while(pq.peek() < K) {
-
+            int mix = pq.poll() + (pq.poll() * 2);
+            pq.add(mix);
+            answer++;
         }
+
         return answer;
     }
 }

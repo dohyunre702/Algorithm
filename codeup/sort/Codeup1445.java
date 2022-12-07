@@ -9,14 +9,27 @@ import java.util.StringTokenizer;
 public class Codeup1445 {
     public static void merge(int[] arr1st, int[] arr2nd, int a, int b) {
         int[] mergeArray = new int[a+b];
-        for(int i = 0; i < mergeArray.length; i++) {
-            if
+
+        int pa = 0;
+        int pb = 0;
+        int pc = 0;
+
+        while (pa < a && pb < b) {
+            mergeArray[pc++] = (arr1st[pa] <= arr2nd[pb]) ? arr1st[pa++] : arr2nd[pb++];
+            }
+
+        while (pa < a) {
+            mergeArray[pc++] = arr1st[pa++];
         }
 
+        while(pb < b) {
+            mergeArray[pc++] = arr2nd[pb++];
+        }
 
-
+        for(int i = 0; i < mergeArray.length; i++) {
+            System.out.printf("%d ", mergeArray[i]);
+        }
     }
-
 
     public static void main(String[] args) throws IOException {
         //두 배열의 크기 n,m 한 줄에 입력
@@ -37,7 +50,7 @@ public class Codeup1445 {
         String[] arr2 = br.readLine().split(" ");
         int[] arrM = new int[arr2.length];
 
-        for(int i = 0; i < arr1.length; i++) {
+        for(int i = 0; i < arr2.length; i++) {
             arrM[i] = Integer.parseInt(arr2[i]);
         }
 

@@ -1,6 +1,6 @@
 package basics.binarySearch;
 
-//이분탐색 구현
+//이분탐색 구현. keypoint: 인덱싱
 public class BinarySearch {
     //인덱스값이 n인 배열 a에서 key와 같은 요소 이분탐색
     public static int binarySearch(int[] a, int n, int key) {

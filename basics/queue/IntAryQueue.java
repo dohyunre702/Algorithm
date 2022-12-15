@@ -85,11 +85,11 @@ public class IntAryQueue {
         return num >= max;
     }
 
-    //dump: 큐 안의 모든 데이터를 꼭대기 -> 바닥 순으로 출력
+    //dump: 큐 안의 모든 데이터를 앞에서부터 출력
     public void dump() {
         if (num <= 0) System.out.println("큐가 비어있습니다.");
         else {
-            for (int i = num-1; i >= 0; i--) {
+            for (int i = 0; i < num; i++) {
                 System.out.println(que[i] + " ");
                 System.out.println();
             }

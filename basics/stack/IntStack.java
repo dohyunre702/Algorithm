@@ -36,13 +36,13 @@ public class IntStack {
     }
 
     //pop
-    public int pop(int x) throws EmptyIntStackException {
+    public int pop() throws EmptyIntStackException {
         if (pointer <= 0) throw new EmptyIntStackException();
         return stk[--pointer];
     }
 
     //peek
-    public int peek(int x) throws EmptyIntStackException {
+    public int peek() throws EmptyIntStackException {
         if (pointer <= 0) throw new EmptyIntStackException();
         return stk[pointer--];
     }
